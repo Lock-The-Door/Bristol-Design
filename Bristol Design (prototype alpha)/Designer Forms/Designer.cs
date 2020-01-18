@@ -88,16 +88,29 @@ namespace Bristol_Design__prototype_alpha_
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            save("");
         }
 
         private void save(string path)
         {
             // Create list that contains each line of the .bbp and init it with the project details
-            List<string> bbp = new List<string>
+            List<string> bbp = new List<string>();
+
+            string randomizedString = "bristolboardprojectfile_"; // The randomised string starts like this to ensure the file is not unsupported or corrupted
+
+            char[] characters = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&-=(){}[]|/`<>+-.~".ToCharArray();
+
+            Random random = new Random();
+
+            for (int i = 0; i < 256; i++)
             {
-                "bb 22,28 in #FFFFFF" // default value
-            };
+                randomizedString += characters[random.Next(0, characters.Length)];
+            }
+
+            Console.WriteLine(randomizedString);
+
+            string boardSettings = "bristolboardprojectfile bb 22,28 in #FFFFFF"; // default value with the random value The entire file will have to start with this, otherwise it is either unsupported or corrupted.
+
             // Get all the controls on the board
             foreach (Control boardObject in p_board.Controls)
             {
@@ -111,10 +124,23 @@ namespace Bristol_Design__prototype_alpha_
                     // Get position of the text.
                     bbpLine += boardLabel.Location.X + "," + boardLabel.Location.Y + " ";
                     // Get size of the textbox
-                    bbp
+                    bbpLine += boardLabel.Size.Height + "," + boardLabel.Size.Width;
 
                     // Get text
-                    bbpLine += boardLabel.Text + " ";
+                    bbpLine += "" + boardLabel.Text + "";
+
+                    //Get b,i,u,s
+                    if (boardLabel.Font.Bold)
+                        bbpLine += "bold ";
+                    if (boardLabel.Font.Italic)
+                        bbpLine += "italic";
+                    if (boardLabel.Font.Underline)
+                        bbpLine += "underline";
+                    if (boardLabel.Font.Strikeout)
+                        bbpLine += "strikeout";
+
+                    // Add line to the final file
+                    bbp.Add(bbpLine);
                 }
                 else if (boardObject.Name.StartsWith("bp_")) // Board pictures will have their own identifier of "bp_"
                 {
@@ -136,6 +162,8 @@ namespace Bristol_Design__prototype_alpha_
                     }
                 }
             }
+
+            Console.WriteLine(bbp);
         }
 
         private void boardSettingsToolStripMenuItem_Click(object sender, EventArgs e)
