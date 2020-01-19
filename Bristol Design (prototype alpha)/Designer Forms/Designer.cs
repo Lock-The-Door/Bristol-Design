@@ -96,7 +96,7 @@ namespace Bristol_Design__prototype_alpha_
             // Create list that contains each line of the .bbp and init it with the project details
             List<string> bbp = new List<string>();
 
-            string randomizedString = "bristolboardprojectfile_"; // The randomised string starts like this to ensure the file is not unsupported or corrupted
+            string randomizedStringStarter = "bristolboardprojectfile_"; // The randomised string starts like this to ensure the file is not unsupported or corrupted
 
             char[] characters = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&-=(){}[]|/`<>+-.~".ToCharArray();
 
@@ -104,10 +104,10 @@ namespace Bristol_Design__prototype_alpha_
 
             for (int i = 0; i < 256; i++)
             {
-                randomizedString += characters[random.Next(0, characters.Length)];
+                randomizedStringStarter += characters[random.Next(0, characters.Length)];
             }
 
-            Console.WriteLine(randomizedString);
+            Console.WriteLine(randomizedStringStarter);
 
             string boardSettings = "bristolboardprojectfile bb 22,28 in #FFFFFF"; // default value with the random value The entire file will have to start with this, otherwise it is either unsupported or corrupted.
 
@@ -127,7 +127,7 @@ namespace Bristol_Design__prototype_alpha_
                     bbpLine += boardLabel.Size.Height + "," + boardLabel.Size.Width;
 
                     // Get text
-                    bbpLine += "" + boardLabel.Text + "";
+                    bbpLine += randomizedStringStarter + boardLabel.Text + randomizedStringStarter;
 
                     //Get b,i,u,s
                     if (boardLabel.Font.Bold)
