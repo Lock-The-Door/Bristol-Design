@@ -21,7 +21,7 @@ namespace Bristol_Design__prototype_alpha_
         private void b_placeholderLaunch_Click(object sender, EventArgs e)
         {
             // Create and name the form
-            Designer designerForm = new Designer();
+            tsb_ designerForm = new tsb_();
             designerForm.Text = "Untitled Bristol Board - Bristol Designer";
 
             //Show the form, close this one

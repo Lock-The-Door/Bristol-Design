@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Bristol_Design__prototype_alpha_
 {
-    public partial class Designer : Form
+    public partial class tsb_ : Form
     {
         string path; // The path to the open file
 
-        public Designer()
+        public tsb_()
         {
             InitializeComponent();
 
@@ -169,6 +169,11 @@ namespace Bristol_Design__prototype_alpha_
         private void boardSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bristol_Setup setup = new Bristol_Setup();
+        }
+
+        private void tsts_Zoom_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

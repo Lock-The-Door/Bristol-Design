@@ -9,7 +9,7 @@ namespace Bristol_Design
 {
     public class Form_Manager
     {
-        public void Launch(Designer designerForm)
+        public void Launch(tsb_ designerForm)
         {
         }
     }
