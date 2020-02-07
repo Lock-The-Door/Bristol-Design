@@ -106,6 +106,7 @@
     <EmbeddedResource Include="Start Page.resx">
       <DependentUpon>Start Page.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Bristol_Design.Designer_Forms.Bristol_Setup.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

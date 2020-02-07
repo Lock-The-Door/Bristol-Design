@@ -13,30 +13,34 @@ namespace Bristol_Design__prototype_alpha_
     {
         string path; // The path to the open file
 
+        public string fileName;
+
         public tsb_()
         {
             InitializeComponent();
 
             // Center the controls
             Center();
-            Console.WriteLine($"first: {pb_text.Location} second: {pb_image.Location}, size: {Toolbox.Size}, form: {Size}");
-
-            // Load a better Title Bar
-            menuStrip.Dock = DockStyle.None;
-            new Label
-            {
-                Text = Text,
-                TextAlign = ContentAlignment.MiddleCenter,
-                Size = new Size(100, 24),
-                BackColor = Color.FromArgb(240, 40, 40),
-                ForeColor = Color.White,
-                Dock = DockStyle.Top,
-                AutoSize = false
-            };
-            menuStrip.Dock = DockStyle.Top;
 
             // Recenter on re-size
             Resize += Designer_Resize;
+        }
+
+        private void tsb__Load(object sender, EventArgs e)
+        {
+            // Update and load the form first
+            Update();
+
+            updateName();
+        }
+
+        private void updateName()
+        {
+            // Set form name
+            Text = fileName + " - Bristol Design";
+
+            // Set title bar name
+            l_Title.Text = fileName + " - Bristol Design";
         }
 
         private void Designer_Resize(object sender, EventArgs e)
@@ -178,9 +182,19 @@ namespace Bristol_Design__prototype_alpha_
             Console.WriteLine(bbp);
         }
 
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // For each item created with the creation tool, delete it.
+            foreach (Textbox_Properties textboxProperty in projectTextboxes)
+                Controls.Remove(textboxProperty.projectTextbox);
+            foreach (PictureBox_Properties pictureboxProperty in projectPictureboxes)
+                Controls.Remove(pictureboxProperty.projectPictureBox);
+        }
+
         private void boardSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bristol_Setup setup = new Bristol_Setup();
+            setup.ShowDialog();
         }
 
         List<Textbox_Properties> projectTextboxes = new List<Textbox_Properties>();
@@ -230,6 +244,26 @@ namespace Bristol_Design__prototype_alpha_
             StartPageRef.Focus();
             Update();
             Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pdfCreation();
+        }
+
+        private void exportStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pdfCreation();
+        }
+
+        private void pdfCreation()
+        {
+            throw new NotImplementedException();
         }
     }
 }

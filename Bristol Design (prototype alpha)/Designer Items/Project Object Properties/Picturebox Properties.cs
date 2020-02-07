@@ -11,8 +11,10 @@ namespace Bristol_Design.Designer_Items
     public class PictureBox_Properties
     {
         int projectItemID;
+        public PictureBox projectPictureBox;
         public PictureBox_Properties(PictureBox pictureBox, int pictureBoxId)
         {
+            projectPictureBox = pictureBox;
             pictureBox.Image = Properties.Resources.Placeholder;
             pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox.MouseDown += ImageBox_MouseDown;

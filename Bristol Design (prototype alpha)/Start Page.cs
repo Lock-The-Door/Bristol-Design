@@ -24,11 +24,12 @@ namespace Bristol_Design__prototype_alpha_
         {
             // Create and name the form
             tsb_ designerForm = new tsb_();
-            designerForm.Text = "Untitled Bristol Board - Bristol Designer";
+            designerForm.fileName = "Untitled Bristol Board";
 
-
-            //Show the form, close this one
+            // Open the new form
             designerForm.Show();
+
+            // Close this form
             designerForm.StartPageRef = this;
             designerForm.Focus();
             Visible = false;

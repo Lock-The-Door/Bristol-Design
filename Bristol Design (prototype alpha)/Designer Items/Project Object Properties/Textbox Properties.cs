@@ -11,8 +11,10 @@ namespace Bristol_Design.Designer_Items
     public class Textbox_Properties
     {
         int projectItemID;
+        public TextBox projectTextbox;
         public Textbox_Properties(TextBox textBox, int textBoxId)
         {
+            projectTextbox = textBox;
             textBox.Text = "Click to add text";
             textBox.MouseDown += TextBox_MouseDown;
             textBox.MouseUp += TextBox_MouseUp;

@@ -143,6 +143,7 @@
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -188,6 +189,7 @@
             | System.Windows.Forms.Keys.E)));
             this.exportStripMenuItem2.Size = new System.Drawing.Size(195, 22);
             this.exportStripMenuItem2.Text = "Export...";
+            this.exportStripMenuItem2.Click += new System.EventHandler(this.exportStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
@@ -195,6 +197,7 @@
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.printToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -220,6 +223,7 @@
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // tsmi_edit
             // 
@@ -690,6 +694,7 @@
             this.Name = "tsb_";
             this.Text = "Bristol Design";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.tsb__Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.Toolbox.ResumeLayout(false);
