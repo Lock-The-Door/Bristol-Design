@@ -13,7 +13,6 @@ namespace Bristol_Design__prototype_alpha_
 {
     public partial class Start_Page : Form
     {
-        bool formShown = true;
 
         public Start_Page()
         {
@@ -33,8 +32,6 @@ namespace Bristol_Design__prototype_alpha_
             designerForm.StartPageRef = this;
             designerForm.Focus();
             Visible = false;
-
-            formShown = false;
 
             // Close when the user exits to form
             designerForm.FormClosed += DesignerForm_FormClosed;

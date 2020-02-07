@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Bristol_Design__prototype_alpha_
@@ -101,7 +102,7 @@ namespace Bristol_Design__prototype_alpha_
             save(Path.GetFullPath(saveFileDialog.FileName));
         }
 
-        private void save(string path)
+        private void save(string savePath)
         {
             // Create list that contains each line of the .bbp and initialize it with the project details
             List<string> bbp = new List<string>();
@@ -121,65 +122,72 @@ namespace Bristol_Design__prototype_alpha_
 
             string boardSettings = "bristolboardprojectfile bb 22,28 in #FFFFFF"; // default value with the random value The entire file will have to start with this, otherwise it is either unsupported or corrupted.
 
+            // Add starting lines for the file
+            bbp.Add(boardSettings);
+            bbp.Add(randomizedStringStarter);
+
             // Get all the controls on the board
-            foreach (Control boardObject in p_board.Controls)
+            string bbpLine; // This will be saved to store the line
+            foreach (Textbox_Properties tb_properties in projectTextboxes)
             {
-                string bbpLine; // This will be saved to store the line in the
-                if (boardObject.Name.StartsWith("bl_")) // Board labels will have their own identifier of "bl_"
-                {
-                    Label boardLabel = boardObject as Label;
+                TextBox boardTextBox = tb_properties.projectTextbox as TextBox;
 
-                    bbpLine = "tb "; // Start line off with the textbox type.
+                bbpLine = "tb "; // Start line off with the textbox type.
 
-                    // Get position of the text.
-                    bbpLine += boardLabel.Location.X + "," + boardLabel.Location.Y + " ";
-                    // Get size of the textbox
-                    bbpLine += boardLabel.Size.Height + "," + boardLabel.Size.Width;
+                // Get position of the text.
+                bbpLine += boardTextBox.Location.X + "," + boardTextBox.Location.Y + " ";
+                // Get size of the textbox
+                bbpLine += boardTextBox.Size.Height + "," + boardTextBox.Size.Width;
 
-                    // Get text
-                    bbpLine += randomizedStringStarter + boardLabel.Text + randomizedStringStarter + " ";
+                // Get text
+                bbpLine += randomizedStringStarter + boardTextBox.Text + randomizedStringStarter + " ";
 
-                    // Get font name
-                    bbpLine += boardLabel.Font.FontFamily;
+                // Get font name
+                bbpLine += boardTextBox.Font.FontFamily;
 
-                    // Get Font size
-                    bbpLine += boardLabel.Size + " ";
+                // Get Font size
+                bbpLine += boardTextBox.Size + " ";
 
-                    //Get b,i,u,s
-                    if (boardLabel.Font.Bold)
-                        bbpLine += "bold ";
-                    if (boardLabel.Font.Italic)
-                        bbpLine += "italic ";
-                    if (boardLabel.Font.Underline)
-                        bbpLine += "underline ";
-                    if (boardLabel.Font.Strikeout)
-                        bbpLine += "strikeout ";
+                //Get b,i,u,s
+                if (boardTextBox.Font.Bold)
+                    bbpLine += "bold ";
+                if (boardTextBox.Font.Italic)
+                    bbpLine += "italic ";
+                if (boardTextBox.Font.Underline)
+                    bbpLine += "underline ";
+                if (boardTextBox.Font.Strikeout)
+                    bbpLine += "strikeout ";
 
-                    // Add line to the final file
-                    bbp.Add(bbpLine);
-                }
-                else if (boardObject.Name.StartsWith("bp_")) // Board pictures will have their own identifier of "bp_"
-                {
-                    PictureBox boardPicture = boardObject as PictureBox;
+                // Add line to the final file
+                bbp.Add(bbpLine);
+            }
 
-                    bbpLine = "img";
-                }
-                else
-                {
-                    DialogResult saveFailAction = MessageBox.Show("An object on your board was not readable so your file failed to save. Would you like to abort saving, retry saving, or simply ignore this and save the file anyway?", "Saving Error!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                    
-                    switch(saveFailAction)
-                    {
-                        case DialogResult.Abort:
-                            return;
-                        case DialogResult.Retry:
-                            save(path);
-                            return;
-                    }
-                }
+            foreach (PictureBox_Properties pb_properties in projectPictureboxes)
+            {
+
+                bbpLine = "img";
             }
 
             Console.WriteLine(bbp);
+
+            // Compile the lines
+            string compiledBbp = "";
+            foreach (string line in bbp)
+                compiledBbp += bbp;
+
+            // Finally write to the file
+            if (path == null)
+            {
+                savePath = Path.Combine(Directory.CreateDirectory(Path.GetPathRoot(savePath)).ToString(), Path.GetFileName(savePath));
+            }
+            FileStream stream = File.Create(savePath);
+
+            foreach (byte bbpByte in Encoding.UTF8.GetBytes(compiledBbp))
+            {
+                stream.WriteByte(bbpByte);
+            }
+
+            stream.Dispose();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
