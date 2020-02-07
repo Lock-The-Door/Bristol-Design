@@ -13,6 +13,8 @@ namespace Bristol_Design__prototype_alpha_
 {
     public partial class Start_Page : Form
     {
+        bool formShown = true;
+
         public Start_Page()
         {
             InitializeComponent();
@@ -24,9 +26,14 @@ namespace Bristol_Design__prototype_alpha_
             tsb_ designerForm = new tsb_();
             designerForm.Text = "Untitled Bristol Board - Bristol Designer";
 
+
             //Show the form, close this one
             designerForm.Show();
-            Hide();
+            designerForm.StartPageRef = this;
+            designerForm.Focus();
+            Visible = false;
+
+            formShown = false;
 
             // Close when the user exits to form
             designerForm.FormClosed += DesignerForm_FormClosed;
@@ -34,7 +41,8 @@ namespace Bristol_Design__prototype_alpha_
 
         private void DesignerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Close();
+            if (!Visible)
+                Close();
         }
     }
 }

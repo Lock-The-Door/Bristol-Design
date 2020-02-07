@@ -64,18 +64,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Designer Forms\Bristol Setup.cs">
+    <Compile Include="Designer Items\Bristol Setup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Designer Forms\Bristol Setup.Designer.cs">
+    <Compile Include="Designer Items\Bristol Setup.Designer.cs">
       <DependentUpon>Bristol Setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Designer Forms\Designer.cs">
+    <Compile Include="Designer Items\Designer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Designer Forms\Designer.Designer.cs">
+    <Compile Include="Designer Items\Designer.Designer.cs">
       <DependentUpon>Designer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designer Items\Project Object Properties\Picturebox Properties.cs" />
+    <Compile Include="Designer Items\Project Object Properties\Textbox Properties.cs" />
     <Compile Include="Form Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,10 +87,10 @@
     <Compile Include="Start Page.Designer.cs">
       <DependentUpon>Start Page.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Designer Forms\Bristol Setup.resx">
+    <EmbeddedResource Include="Designer Items\Bristol Setup.resx">
       <DependentUpon>Bristol Setup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Designer Forms\Designer.resx">
+    <EmbeddedResource Include="Designer Items\Designer.resx">
       <DependentUpon>Designer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -128,6 +130,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Placeholder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

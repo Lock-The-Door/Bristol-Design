@@ -1,12 +1,10 @@
 ﻿using Bristol_Design.Designer_Forms;
+using Bristol_Design.Designer_Items;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bristol_Design__prototype_alpha_
@@ -37,7 +35,7 @@ namespace Bristol_Design__prototype_alpha_
             };
             menuStrip.Dock = DockStyle.Top;
 
-            // Recenter on resize
+            // Recenter on re-size
             Resize += Designer_Resize;
         }
 
@@ -75,6 +73,12 @@ namespace Bristol_Design__prototype_alpha_
             }
         }
 
+
+        private void tsb_Save_Click(object sender, EventArgs e)
+        {
+            saveToolStripMenuItem_Click(sender, e);
+        }
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (path == null)
@@ -83,20 +87,22 @@ namespace Bristol_Design__prototype_alpha_
                 return;
             }
 
-
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            save("");
+            DialogResult saveAsLocation = saveFileDialog.ShowDialog();
+            if (saveAsLocation == DialogResult.Cancel)
+                return;
+            save(Path.GetFullPath(saveFileDialog.FileName));
         }
 
         private void save(string path)
         {
-            // Create list that contains each line of the .bbp and init it with the project details
+            // Create list that contains each line of the .bbp and initialize it with the project details
             List<string> bbp = new List<string>();
 
-            string randomizedStringStarter = "bristolboardprojectfile_"; // The randomised string starts like this to ensure the file is not unsupported or corrupted
+            string randomizedStringStarter = "bristolboardprojectfile_"; // The randomized string starts like this to ensure the file is not unsupported or corrupted
 
             char[] characters = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&-=(){}[]|/`<>+-.~".ToCharArray();
 
@@ -127,17 +133,23 @@ namespace Bristol_Design__prototype_alpha_
                     bbpLine += boardLabel.Size.Height + "," + boardLabel.Size.Width;
 
                     // Get text
-                    bbpLine += randomizedStringStarter + boardLabel.Text + randomizedStringStarter;
+                    bbpLine += randomizedStringStarter + boardLabel.Text + randomizedStringStarter + " ";
+
+                    // Get font name
+                    bbpLine += boardLabel.Font.FontFamily;
+
+                    // Get Font size
+                    bbpLine += boardLabel.Size + " ";
 
                     //Get b,i,u,s
                     if (boardLabel.Font.Bold)
                         bbpLine += "bold ";
                     if (boardLabel.Font.Italic)
-                        bbpLine += "italic";
+                        bbpLine += "italic ";
                     if (boardLabel.Font.Underline)
-                        bbpLine += "underline";
+                        bbpLine += "underline ";
                     if (boardLabel.Font.Strikeout)
-                        bbpLine += "strikeout";
+                        bbpLine += "strikeout ";
 
                     // Add line to the final file
                     bbp.Add(bbpLine);
@@ -171,9 +183,53 @@ namespace Bristol_Design__prototype_alpha_
             Bristol_Setup setup = new Bristol_Setup();
         }
 
-        private void tsts_Zoom_Click(object sender, EventArgs e)
-        {
+        List<Textbox_Properties> projectTextboxes = new List<Textbox_Properties>();
+        List<PictureBox_Properties> projectPictureboxes = new List<PictureBox_Properties>();
 
+        int projectItemCount;
+
+        private void pb_text_MouseDown(object sender, EventArgs e)
+        {
+            TextBox textBox = new TextBox
+            {
+                Parent = this,
+                Name = "textBox" + projectItemCount
+            };
+
+            Textbox_Properties textbox_Properties = new Textbox_Properties(textBox, projectItemCount);
+
+            projectTextboxes.Add(textbox_Properties);
+
+            Console.WriteLine(textBox);
+
+            projectItemCount++;
+        }
+
+        private void pb_image_MouseDown(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = new PictureBox
+            {
+                Parent = this,
+                Name = "pictureBox" + projectItemCount
+            };
+
+            PictureBox_Properties pictureBox_Properties = new PictureBox_Properties(pictureBox, projectItemCount);
+
+            projectPictureboxes.Add(pictureBox_Properties);
+
+            Console.WriteLine(pictureBox);
+
+            projectItemCount++;
+        }
+
+        public Form StartPageRef { get; set; }
+        private void startPageStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StartPageRef.Show();
+            StartPageRef.Update();
+            StartPageRef.Focus();
+            Update();
+            Close();
         }
     }
 }

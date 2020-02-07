@@ -68,8 +68,8 @@
             this.tsb_New = new System.Windows.Forms.ToolStripButton();
             this.tsb_Open = new System.Windows.Forms.ToolStripButton();
             this.tsb_Save = new System.Windows.Forms.ToolStripButton();
-            this.tsb_Undo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsb_Undo = new System.Windows.Forms.ToolStripButton();
             this.tsb_Redo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tscb_Zoom = new System.Windows.Forms.ToolStripComboBox();
@@ -89,6 +89,8 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tsb_Shading = new System.Windows.Forms.ToolStripButton();
             this.tsb_Borders = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip.SuspendLayout();
             this.Toolbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_text)).BeginInit();
@@ -155,6 +157,7 @@
             this.startPageStripMenuItem.ShowShortcutKeys = false;
             this.startPageStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.startPageStripMenuItem.Text = "Start Page";
+            this.startPageStripMenuItem.Click += new System.EventHandler(this.startPageStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -351,6 +354,7 @@
             this.pb_text.Size = new System.Drawing.Size(100, 51);
             this.pb_text.TabIndex = 0;
             this.pb_text.TabStop = false;
+            this.pb_text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pb_text_MouseDown);
             // 
             // pb_image
             // 
@@ -361,6 +365,7 @@
             this.pb_image.Size = new System.Drawing.Size(100, 51);
             this.pb_image.TabIndex = 1;
             this.pb_image.TabStop = false;
+            this.pb_image.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pb_image_MouseDown);
             // 
             // l_Title
             // 
@@ -444,6 +449,12 @@
             this.tsb_Save.Name = "tsb_Save";
             this.tsb_Save.Size = new System.Drawing.Size(23, 25);
             this.tsb_Save.Text = "Save";
+            this.tsb_Save.Click += new System.EventHandler(this.tsb_Save_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
             // tsb_Undo
             // 
@@ -453,11 +464,6 @@
             this.tsb_Undo.Name = "tsb_Undo";
             this.tsb_Undo.Size = new System.Drawing.Size(23, 25);
             this.tsb_Undo.Text = "Undo";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
             // tsb_Redo
             // 
@@ -484,7 +490,7 @@
             "100%"});
             this.tscb_Zoom.AutoSize = false;
             this.tscb_Zoom.Name = "tscb_Zoom";
-            this.tscb_Zoom.Size = new System.Drawing.Size(55, 28);
+            this.tscb_Zoom.Size = new System.Drawing.Size(55, 23);
             this.tscb_Zoom.Text = "10%";
             // 
             // tsddb_Font
@@ -504,7 +510,7 @@
             // arialToolStripMenuItem
             // 
             this.arialToolStripMenuItem.Name = "arialToolStripMenuItem";
-            this.arialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arialToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.arialToolStripMenuItem.Text = "Arial";
             // 
             // tscb_FontSize
@@ -660,6 +666,16 @@
             this.tsb_Borders.Size = new System.Drawing.Size(23, 25);
             this.tsb_Borders.Text = "Borders";
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "bbp";
+            this.openFileDialog.Title = "Open...";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "bbp";
+            this.saveFileDialog.Title = "Save As";
+            // 
             // tsb_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,6 +766,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton tsb_Shading;
         private System.Windows.Forms.ToolStripButton tsb_Borders;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
