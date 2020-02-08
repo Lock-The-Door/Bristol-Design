@@ -164,7 +164,6 @@ namespace Bristol_Design__prototype_alpha_
 
             foreach (PictureBox_Properties pb_properties in projectPictureboxes)
             {
-
                 bbpLine = "img";
             }
 
@@ -173,12 +172,13 @@ namespace Bristol_Design__prototype_alpha_
             // Compile the lines
             string compiledBbp = "";
             foreach (string line in bbp)
-                compiledBbp += bbp;
+                compiledBbp += line;
 
             // Finally write to the file
             if (path == null)
             {
-                savePath = Path.Combine(Directory.CreateDirectory(Path.GetPathRoot(savePath)).ToString(), Path.GetFileName(savePath));
+                var directory = Directory.CreateDirectory(Path.GetFullPath(Path.GetDirectoryName(savePath)));
+                savePath = Path.Combine(directory.FullName, Path.GetFileName(savePath));
             }
             FileStream stream = File.Create(savePath);
 
@@ -188,6 +188,11 @@ namespace Bristol_Design__prototype_alpha_
             }
 
             stream.Dispose();
+
+            // Once saved, rename the project and specify a save path
+            path = savePath;
+            fileName = Path.GetFileNameWithoutExtension(path);
+            updateName();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
