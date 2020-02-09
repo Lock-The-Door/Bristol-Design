@@ -96,8 +96,8 @@ namespace Bristol_Design__prototype_alpha_
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult saveAsLocation = saveFileDialog.ShowDialog();
-            if (saveAsLocation == DialogResult.Cancel)
+            DialogResult saveAsDialog = saveFileDialog.ShowDialog();
+            if (saveAsDialog == DialogResult.Cancel)
                 return;
             save(Path.GetFullPath(saveFileDialog.FileName));
         }
@@ -172,7 +172,7 @@ namespace Bristol_Design__prototype_alpha_
             // Compile the lines
             string compiledBbp = "";
             foreach (string line in bbp)
-                compiledBbp += line;
+                compiledBbp += line + "\n";
 
             // Finally write to the file
             if (path == null)
@@ -193,6 +193,23 @@ namespace Bristol_Design__prototype_alpha_
             path = savePath;
             fileName = Path.GetFileNameWithoutExtension(path);
             updateName();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Get file location
+            DialogResult openResult = openFileDialog.ShowDialog();
+            if (openResult == DialogResult.Cancel)
+                return;
+            string openPath = Path.GetFullPath(openFileDialog.FileName);
+
+            // Open and read file
+            List<string> bbpProjectLines = new List<string>();
+            foreach (string bbpProjectLine in File.ReadLines(openPath))
+            {
+                bbpProjectLines.Add(bbpProjectLine);
+                Console.WriteLine(bbpProjectLine);
+            }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
