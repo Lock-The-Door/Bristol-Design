@@ -107,7 +107,7 @@ namespace Bristol_Design__prototype_alpha_
             // Create list that contains each line of the .bbp and initialize it with the project details
             List<string> bbp = new List<string>();
 
-            string randomizedStringStarter = "bristolboardprojectfile_"; // The randomized string starts like this to ensure the file is not unsupported or corrupted
+            string randomizedStringEnd = "bristolboardprojectfile_"; // The randomized string starts like this to ensure the file is not unsupported or corrupted
 
             char[] characters = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&-=(){}[]|/`<>+-.~".ToCharArray();
 
@@ -115,16 +115,16 @@ namespace Bristol_Design__prototype_alpha_
 
             for (int i = 0; i < 256; i++)
             {
-                randomizedStringStarter += characters[random.Next(0, characters.Length)];
+                randomizedStringEnd += characters[random.Next(0, characters.Length)];
             }
 
-            Console.WriteLine(randomizedStringStarter);
+            Console.WriteLine(randomizedStringEnd);
 
             string boardSettings = "bristolboardprojectfile bb 22,28 in #FFFFFF"; // default value with the random value The entire file will have to start with this, otherwise it is either unsupported or corrupted.
 
             // Add starting lines for the file
             bbp.Add(boardSettings);
-            bbp.Add(randomizedStringStarter);
+            bbp.Add(randomizedStringEnd);
 
             // Get all the controls on the board
             string bbpLine; // This will be saved to store the line
@@ -137,10 +137,10 @@ namespace Bristol_Design__prototype_alpha_
                 // Get position of the text.
                 bbpLine += boardTextBox.Location.X + "," + boardTextBox.Location.Y + " ";
                 // Get size of the textbox
-                bbpLine += boardTextBox.Size.Height + "," + boardTextBox.Size.Width;
+                bbpLine += boardTextBox.Size.Height + "," + boardTextBox.Size.Width + " ";
 
                 // Get text
-                bbpLine += randomizedStringStarter + boardTextBox.Text + randomizedStringStarter + " ";
+                bbpLine += boardTextBox.Text + randomizedStringEnd + " ";
 
                 // Get font name
                 bbpLine += boardTextBox.Font.FontFamily;
@@ -164,7 +164,7 @@ namespace Bristol_Design__prototype_alpha_
 
             foreach (PictureBox_Properties pb_properties in projectPictureboxes)
             {
-                bbpLine = "img";
+                bbpLine = "pb ";
             }
 
             Console.WriteLine(bbp);
@@ -209,6 +209,52 @@ namespace Bristol_Design__prototype_alpha_
             {
                 bbpProjectLines.Add(bbpProjectLine);
                 Console.WriteLine(bbpProjectLine);
+            }
+
+            // Get board setting files first
+            string settings = bbpProjectLines[0];
+            string textEnd = bbpProjectLines[1];
+            //Remove those lines
+            bbpProjectLines.RemoveRange(0, 2);
+
+            // Get the project items next
+            foreach (string projectObject in bbpProjectLines)
+            {
+                Console.WriteLine(projectObject);
+                // Get object type to load the correct properties then delete them
+                string projectObjectType = projectObject.Substring(0, 2); 
+                string projectProperties = projectObject.Remove(0, 3);
+
+                Console.WriteLine(projectObjectType);
+                Console.WriteLine(projectProperties);
+
+                switch (projectObjectType)
+                {
+                    case "tb": // Textbox
+                        int endPos;
+
+                        // Get size
+                        int height = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
+                        endPos = projectProperties.IndexOf(' '); // Get the property end character (a space)
+                        int width = Convert.ToInt32(projectProperties.Remove(endPos));
+                        projectProperties = projectProperties.Remove(0, endPos + 1);
+
+                        // Get position
+                        int xPos = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
+                        endPos = projectProperties.IndexOf(' '); // Get the property end character (a space)
+                        int yPos = Convert.ToInt32(projectProperties.Remove(endPos));
+                        projectProperties = projectProperties.Remove(0, endPos + 1);
+                        Point position = new Point(xPos, yPos);
+
+                        // Get the original string
+                        string textboxText = projectProperties;
+                        // Remove the last character until the ending is the string end
+                        while (!textboxText.EndsWith(textEnd))
+                            textboxText = textboxText.Remove(textboxText.Length - 1);
+                        // Remove the string end
+                        textboxText.Remove(280); // The end is hard coded to 280 characters
+                        break;
+                }
             }
         }
 
