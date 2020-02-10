@@ -251,12 +251,45 @@ namespace Bristol_Design__prototype_alpha_
                         // Remove the last character until the ending is the string end
                         while (!textboxText.EndsWith(textEnd))
                             textboxText = textboxText.Remove(textboxText.Length - 1);
+                        // Get the amount of characters that are left (to know how much to remove from the properties string)
+                        int removeIndex = textboxText.Length + 1;
                         // Remove the string end
                         textboxText.Remove(280); // The end is hard coded to 280 characters
+                        // Remove the used properties
+                        projectProperties = projectProperties.Remove(0, removeIndex);
 
                         // Get size
                         endPos = projectProperties.IndexOf(' ');
-                        int 
+                        float fontSize = float.Parse(projectProperties.Remove(endPos));
+                        // Remove the property
+                        projectProperties = projectProperties.Remove(0, endPos + 1);
+
+                        //Get b,i,u,s
+                        bool bold = false;
+                        bool italics = false;
+                        bool underline = false;
+                        bool strikeout = false;
+                        endPos = projectProperties.IndexOf(' ');
+                        if (projectProperties.Remove(endPos) == "bold")
+                        {
+                            bold = true;
+                            projectProperties = projectProperties.Remove(0, endPos + 1);
+                        }
+                        if (projectProperties.Remove(endPos) == "italic")
+                        {
+                            italics = true;
+                            projectProperties = projectProperties.Remove(0, endPos + 1);
+                        }
+                        if (projectProperties.Remove(endPos) == "underline")
+                        {
+                            underline = true;
+                            projectProperties = projectProperties.Remove(0, endPos + 1);
+                        }
+                        if (projectProperties.Remove(endPos) == "strikeout")
+                        {
+                            strikeout = true;
+                            projectProperties = projectProperties.Remove(0, endPos + 1);
+                        }
                         break;
                 }
             }
