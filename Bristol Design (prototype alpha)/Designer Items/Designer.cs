@@ -102,12 +102,16 @@ namespace Bristol_Design__prototype_alpha_
             save(Path.GetFullPath(saveFileDialog.FileName));
         }
 
+        List<Textbox_Properties> projectTextboxes = new List<Textbox_Properties>();
+        List<PictureBox_Properties> projectPictureboxes = new List<PictureBox_Properties>();
+
         private void save(string savePath)
         {
             // Create list that contains each line of the .bbp and initialize it with the project details
             List<string> bbp = new List<string>();
 
             string randomizedStringEnd = "bristolboardprojectfile_"; // The randomized string starts like this to ensure the file is not unsupported or corrupted
+            string randomizedFontNameEnd = "bristolboardprojectfont_";
 
             char[] characters = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&-=(){}[]|/`<>+-.~".ToCharArray();
 
@@ -116,6 +120,7 @@ namespace Bristol_Design__prototype_alpha_
             for (int i = 0; i < 256; i++)
             {
                 randomizedStringEnd += characters[random.Next(0, characters.Length)];
+                randomizedFontNameEnd += characters[random.Next(0, characters.Length)];
             }
 
             Console.WriteLine(randomizedStringEnd);
@@ -125,6 +130,7 @@ namespace Bristol_Design__prototype_alpha_
             // Add starting lines for the file
             bbp.Add(boardSettings);
             bbp.Add(randomizedStringEnd);
+            bbp.Add(randomizedFontNameEnd);
 
             // Get all the controls on the board
             string bbpLine; // This will be saved to store the line
@@ -140,10 +146,10 @@ namespace Bristol_Design__prototype_alpha_
                 bbpLine += boardTextBox.Size.Height + "," + boardTextBox.Size.Width + " ";
 
                 // Get text
-                bbpLine += boardTextBox.Text + randomizedStringEnd + " ";
+                bbpLine += boardTextBox.Text + randomizedStringEnd;
 
                 // Get font name
-                //bbpLine += boardTextBox.Font.FontFamily;
+                bbpLine += boardTextBox.Font.FontFamily.Name + randomizedFontNameEnd;
 
                 // Get Font size
                 bbpLine += boardTextBox.Font.Size + " ";
@@ -214,8 +220,12 @@ namespace Bristol_Design__prototype_alpha_
             // Get board setting files first
             string settings = bbpProjectLines[0];
             string textEnd = bbpProjectLines[1];
+            string fontEnd = bbpProjectLines[2];
             //Remove those lines
-            bbpProjectLines.RemoveRange(0, 2);
+            bbpProjectLines.RemoveRange(0, 3);
+
+            // Define a textbox id
+            int projectItemCount = 0;
 
             // Get the project items next
             foreach (string projectObject in bbpProjectLines)
@@ -235,12 +245,16 @@ namespace Bristol_Design__prototype_alpha_
 
                         // Get size
                         int height = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
+                        projectProperties = projectProperties.Remove(0, projectProperties.IndexOf(',') + 1);
                         endPos = projectProperties.IndexOf(' '); // Get the property end character (a space)
                         int width = Convert.ToInt32(projectProperties.Remove(endPos));
                         projectProperties = projectProperties.Remove(0, endPos + 1);
 
+                        Console.WriteLine(width + " " + height);
+
                         // Get position
                         int xPos = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
+                        projectProperties = projectProperties.Remove(0, projectProperties.IndexOf(',') + 1);
                         endPos = projectProperties.IndexOf(' '); // Get the property end character (a space)
                         int yPos = Convert.ToInt32(projectProperties.Remove(endPos));
                         projectProperties = projectProperties.Remove(0, endPos + 1);
@@ -252,11 +266,23 @@ namespace Bristol_Design__prototype_alpha_
                         while (!textboxText.EndsWith(textEnd))
                             textboxText = textboxText.Remove(textboxText.Length - 1);
                         // Get the amount of characters that are left (to know how much to remove from the properties string)
-                        int removeIndex = textboxText.Length + 1;
+                        int removeCount = textboxText.Length + 1;
                         // Remove the string end
-                        textboxText.Remove(280); // The end is hard coded to 280 characters
+                        textboxText.Remove(textboxText.Length - 280); // The end is hard coded to 280 characters
                         // Remove the used properties
-                        projectProperties = projectProperties.Remove(0, removeIndex);
+                        projectProperties = projectProperties.Remove(0, removeCount);
+
+                        // Get font name
+                        string fontFamilyName = projectProperties;
+                        // Remove the last character until the ending is the string end
+                        while (!fontFamilyName.EndsWith(fontEnd))
+                            fontFamilyName = fontFamilyName.Remove(fontFamilyName.Length - 1);
+                        // Get the amount of characters that are left (to know how much to remove from the properties string)
+                        removeCount = fontFamilyName.Length + 1;
+                        // Remove the string end
+                        fontFamilyName.Remove(textboxText.Length - 280); // The end is hard coded to 280 characters
+                        // Remove the used properties
+                        projectProperties = projectProperties.Remove(0, removeCount);
 
                         // Get size
                         endPos = projectProperties.IndexOf(' ');
@@ -265,33 +291,60 @@ namespace Bristol_Design__prototype_alpha_
                         projectProperties = projectProperties.Remove(0, endPos + 1);
 
                         //Get b,i,u,s
-                        bool bold = false;
-                        bool italics = false;
-                        bool underline = false;
-                        bool strikeout = false;
+                        FontStyle fontStyle = FontStyle.Regular;
                         endPos = projectProperties.IndexOf(' ');
-                        if (projectProperties.Remove(endPos) == "bold")
+                        bool finished = false;
+                        if (projectProperties.Length == 0) // Make sure there are more properties first
+                            finished = true;
+                        if (!finished && projectProperties.Remove(endPos) == "bold")
                         {
-                            bold = true;
+                            fontStyle = FontStyle.Bold;
                             projectProperties = projectProperties.Remove(0, endPos + 1);
+
+                            if (projectProperties.Length == 0) // Make sure there are more properties first
+                                finished = true;
                         }
-                        if (projectProperties.Remove(endPos) == "italic")
+                        if (!finished && projectProperties.Remove(endPos) == "italic")
                         {
-                            italics = true;
+                            fontStyle = fontStyle | FontStyle.Italic;
                             projectProperties = projectProperties.Remove(0, endPos + 1);
+
+                            if (projectProperties.Length == 0) // Make sure there are more properties first
+                                finished = true;
                         }
-                        if (projectProperties.Remove(endPos) == "underline")
+                        if (!finished && projectProperties.Remove(endPos) == "underline")
                         {
-                            underline = true;
+                            fontStyle = fontStyle | FontStyle.Underline;
                             projectProperties = projectProperties.Remove(0, endPos + 1);
+
+                            if (projectProperties.Length == 0) // Make sure there are more properties first
+                                finished = true;
                         }
-                        if (projectProperties.Remove(endPos) == "strikeout")
+                        if (!finished && projectProperties.Remove(endPos) == "strikeout")
                         {
-                            strikeout = true;
+                            fontStyle = fontStyle | FontStyle.Strikeout;
                             projectProperties = projectProperties.Remove(0, endPos + 1);
+
+                            if (projectProperties.Length == 0) // Make sure there are more properties first
+                                finished = true;
                         }
+
+                        // Create the textbox and add the properties
+                        Textbox_Properties textbox_Properties = new Textbox_Properties(new TextBox(), projectItemCount);
+                        TextBox textbox = textbox_Properties.projectTextbox;
+                        textbox.Parent = this;
+                        textbox.Location = position;
+                        textbox.Size = new Size(new Point(width, height));
+                        textbox.Text = textboxText;
+                        textbox.Font = new Font(fontFamilyName, fontSize, fontStyle);
+                        projectTextboxes.Add(textbox_Properties);
+                        Update();
+
                         break;
                 }
+
+                // Increase projectItemCount
+                projectItemCount++;
             }
         }
 
@@ -309,9 +362,6 @@ namespace Bristol_Design__prototype_alpha_
             Bristol_Setup setup = new Bristol_Setup();
             setup.ShowDialog();
         }
-
-        List<Textbox_Properties> projectTextboxes = new List<Textbox_Properties>();
-        List<PictureBox_Properties> projectPictureboxes = new List<PictureBox_Properties>();
 
         int projectItemCount;
 
