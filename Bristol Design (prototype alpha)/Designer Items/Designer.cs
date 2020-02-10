@@ -143,7 +143,7 @@ namespace Bristol_Design__prototype_alpha_
                 bbpLine += boardTextBox.Text + randomizedStringEnd + " ";
 
                 // Get font name
-                bbpLine += boardTextBox.Font.FontFamily;
+                //bbpLine += boardTextBox.Font.FontFamily;
 
                 // Get Font size
                 bbpLine += boardTextBox.Size + " ";
