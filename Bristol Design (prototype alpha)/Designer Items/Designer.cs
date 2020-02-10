@@ -146,7 +146,7 @@ namespace Bristol_Design__prototype_alpha_
                 //bbpLine += boardTextBox.Font.FontFamily;
 
                 // Get Font size
-                bbpLine += boardTextBox.Size + " ";
+                bbpLine += boardTextBox.Font.Size + " ";
 
                 //Get b,i,u,s
                 if (boardTextBox.Font.Bold)
@@ -253,6 +253,10 @@ namespace Bristol_Design__prototype_alpha_
                             textboxText = textboxText.Remove(textboxText.Length - 1);
                         // Remove the string end
                         textboxText.Remove(280); // The end is hard coded to 280 characters
+
+                        // Get size
+                        endPos = projectProperties.IndexOf(' ');
+                        int 
                         break;
                 }
             }
