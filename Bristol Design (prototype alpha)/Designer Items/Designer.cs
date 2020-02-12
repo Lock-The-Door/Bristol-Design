@@ -268,7 +268,7 @@ namespace Bristol_Design__prototype_alpha_
                         // Get the amount of characters that are left (to know how much to remove from the properties string)
                         int removeCount = textboxText.Length + 1;
                         // Remove the string end
-                        textboxText.Remove(textboxText.Length - 280); // The end is hard coded to 280 characters
+                        textboxText = textboxText.Remove(textboxText.Length - 280); // The end is hard coded to 280 characters
                         // Remove the used properties
                         projectProperties = projectProperties.Remove(0, removeCount);
 
@@ -280,7 +280,7 @@ namespace Bristol_Design__prototype_alpha_
                         // Get the amount of characters that are left (to know how much to remove from the properties string)
                         removeCount = fontFamilyName.Length + 1;
                         // Remove the string end
-                        fontFamilyName.Remove(textboxText.Length - 280); // The end is hard coded to 280 characters
+                        fontFamilyName =  fontFamilyName.Remove(fontFamilyName.Length - 280); // The end is hard coded to 280 characters
                         // Remove the used properties
                         projectProperties = projectProperties.Remove(0, removeCount);
 
