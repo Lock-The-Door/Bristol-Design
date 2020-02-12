@@ -349,6 +349,10 @@ namespace Bristol_Design__prototype_alpha_
                 // Increase projectItemCount
                 projectItemCount++;
             }
+
+            // Update the name
+            fileName = Path.GetFileNameWithoutExtension(openPath);
+            updateName();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
