@@ -278,7 +278,7 @@ namespace Bristol_Design__prototype_alpha_
                         while (!fontFamilyName.EndsWith(fontEnd))
                             fontFamilyName = fontFamilyName.Remove(fontFamilyName.Length - 1);
                         // Get the amount of characters that are left (to know how much to remove from the properties string)
-                        removeCount = fontFamilyName.Length + 1;
+                        removeCount = fontFamilyName.Length;
                         // Remove the string end
                         fontFamilyName =  fontFamilyName.Remove(fontFamilyName.Length - 280); // The end is hard coded to 280 characters
                         // Remove the used properties
@@ -334,9 +334,11 @@ namespace Bristol_Design__prototype_alpha_
                         TextBox textbox = textbox_Properties.projectTextbox;
                         textbox.Parent = this;
                         textbox.Location = position;
-                        textbox.Size = new Size(new Point(width, height));
-                        textbox.Text = textboxText;
                         textbox.Font = new Font(fontFamilyName, fontSize, fontStyle);
+                        Console.WriteLine(fontSize + " " + textbox.Font);
+                        textbox.Size = new Size(new Point(width, height));
+                        Console.WriteLine(textbox.Size);
+                        textbox.Text = textboxText;
                         projectTextboxes.Add(textbox_Properties);
                         textbox.BringToFront();
                         Update();
