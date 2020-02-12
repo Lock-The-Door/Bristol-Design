@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Bristol_Design__prototype_beta_</RootNamespace>
+  </PropertyGroup>
+
+
+
+</Project>

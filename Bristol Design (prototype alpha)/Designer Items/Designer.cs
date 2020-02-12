@@ -243,6 +243,14 @@ namespace Bristol_Design__prototype_alpha_
                     case "tb": // Textbox
                         int endPos;
 
+                        // Get position
+                        int xPos = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
+                        projectProperties = projectProperties.Remove(0, projectProperties.IndexOf(',') + 1);
+                        endPos = projectProperties.IndexOf(' '); // Get the property end character (a space)
+                        int yPos = Convert.ToInt32(projectProperties.Remove(endPos));
+                        projectProperties = projectProperties.Remove(0, endPos + 1);
+                        Point position = new Point(xPos, yPos);
+
                         // Get size
                         int height = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
                         projectProperties = projectProperties.Remove(0, projectProperties.IndexOf(',') + 1);
@@ -251,14 +259,6 @@ namespace Bristol_Design__prototype_alpha_
                         projectProperties = projectProperties.Remove(0, endPos + 1);
 
                         Console.WriteLine(width + " " + height);
-
-                        // Get position
-                        int xPos = Convert.ToInt32(projectProperties.Remove(projectProperties.IndexOf(',')));
-                        projectProperties = projectProperties.Remove(0, projectProperties.IndexOf(',') + 1);
-                        endPos = projectProperties.IndexOf(' '); // Get the property end character (a space)
-                        int yPos = Convert.ToInt32(projectProperties.Remove(endPos));
-                        projectProperties = projectProperties.Remove(0, endPos + 1);
-                        Point position = new Point(xPos, yPos);
 
                         // Get the original string
                         string textboxText = projectProperties;
@@ -338,6 +338,7 @@ namespace Bristol_Design__prototype_alpha_
                         textbox.Text = textboxText;
                         textbox.Font = new Font(fontFamilyName, fontSize, fontStyle);
                         projectTextboxes.Add(textbox_Properties);
+                        textbox.BringToFront();
                         Update();
 
                         break;
