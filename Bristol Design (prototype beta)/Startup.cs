@@ -32,6 +32,7 @@ namespace Bristol_Design__prototype_beta_
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
