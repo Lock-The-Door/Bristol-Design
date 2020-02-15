@@ -2,3 +2,30 @@
 @model Bristol_Design__prototype_beta_.Pages.App.IndexModel
 @{
 }
+
+<svg height="700" class="pt-2 pb-2 mx-auto">
+    <g fill="white" stroke="grey" stroke-width="1" id="projectBoard">
+        <rect width="900" height="500" />
+    </g>
+</svg>
+
+<div id="toolboxItem" draggable="false" class="border-dark">
+    <img src="~/Media/textBoxItem.png" />
+</div>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+    #toolboxItem {
+        width: 200px;
+        height: 100px;
+    }
+</style>
+
+<script>
+    $(function () {
+        $("#toolboxItem").draggable();
+    });
+</script>

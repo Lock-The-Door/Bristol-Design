@@ -9,27 +9,82 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Bristol Design</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/Media/Logo1.png" height="25" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
         </nav>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow" id="menuStrip">
+            <div class="btn-toolbar container-fluid small d-inline-block">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm dropdown" id="dropdownEdit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        File
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="dropdownFile">
+                        <button class="dropdown-item" type="button">New</button>
+                        <button class="dropdown-item" type="button">Open</button>
+                        <button class="dropdown-item" type="button">Rename</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button">Download</button>
+                        <button class="dropdown-item" type="button">Export PDF</button>
+                        <button class="dropdown-item" type="button">Print</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button">Board Setup</button>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm dropdown" id="dropdownEdit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Edit
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="dropdownFile">
+                        <button class="dropdown-item" type="button">Undo</button>
+                        <button class="dropdown-item" type="button">Redo</button>
+                        <button class="dropdown-item" type="button">Cut</button>
+                        <button class="dropdown-item" type="button">Copy</button>
+                        <button class="dropdown-item" type="button">Paste</button>
+                        <button class="dropdown-item" type="button">Delete</button>
+                        <button class="dropdown-item" type="button">Select All</button>
+                        <button class="dropdown-item" type="button">Find and Replace</button>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm dropdown" id="dropdownEdit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        View
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="dropdownFile">
+                        <p class="dropdown-item-text">This has not been implemented yet...</p>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm dropdown" id="dropdownEdit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Insert
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="dropdownFile">
+                        <button class="dropdown-item" type="button">Text</button>
+                        <button class="dropdown-item" type="button">Image</button>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm dropdown" id="dropdownEdit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Format
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="dropdownFile">
+                        <p class="dropdown-item-text">This has not been implemented yet...</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pt-1 pb-1">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - Bristol Design - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
