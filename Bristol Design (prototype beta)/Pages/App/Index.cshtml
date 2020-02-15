@@ -3,14 +3,17 @@
 @{
 }
 
-<svg height="700" class="pt-2 pb-2 mx-auto">
-    <g fill="white" stroke="grey" stroke-width="1" id="projectBoard">
+<svg class="p-2 m-auto box-shadow">
+    <g fill="white" id="projectBoard">
         <rect width="900" height="500" />
     </g>
 </svg>
 
-<div id="toolboxItem" draggable="false" class="border-dark">
+<div draggable="false" class="border-dark toolboxItem">
     <img src="~/Media/textBoxItem.png" />
+</div>
+<div draggable="false" class="border-dark toolboxItem">
+    <img src="~/Media/imageItem.png" />
 </div>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -18,7 +21,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <style>
-    #toolboxItem {
+    .toolboxItem {
         width: 200px;
         height: 100px;
     }
@@ -26,6 +29,6 @@
 
 <script>
     $(function () {
-        $("#toolboxItem").draggable();
+        $(".toolboxItem").draggable();
     });
 </script>
