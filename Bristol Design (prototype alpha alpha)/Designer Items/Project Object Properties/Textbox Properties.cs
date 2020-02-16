@@ -12,6 +12,7 @@ namespace Bristol_Design.Designer_Items
     {
         int projectItemID;
         public TextBox projectTextbox;
+        private Panel selectedPanel;
         public Textbox_Properties(TextBox textBox, int textBoxId)
         {
             projectTextbox = textBox;
@@ -21,13 +22,15 @@ namespace Bristol_Design.Designer_Items
             textBox.MouseMove += TextBox_MouseMove;
             mouseDown = true;
             textBox.Enabled = true;
-            textBox.BringToFront();
             textBox.Focus();
             textBox.Name = "bl_textBox" + projectItemID;
             textBox.TextChanged += TextBox_TextChanged;
             projectItemID = textBoxId;
 
             textBox.KeyPress += TextBox_KeyPress;
+
+            textBox.BringToFront();
+            Console.WriteLine(selectedPanel);
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -46,6 +49,7 @@ namespace Bristol_Design.Designer_Items
 
         private bool mouseDown = false;
         private Point MouseDownLocation;
+        private bool move = false;
 
         private void TextBox_MouseUp(object sender, MouseEventArgs e)
         {
@@ -59,13 +63,16 @@ namespace Bristol_Design.Designer_Items
 
             TextBox textBox = sender as TextBox;
 
+            move = MouseDownLocation.X < 2 || MouseDownLocation.Y < 2 || MouseDownLocation.X > textBox.Size.Width - 2 || MouseDownLocation.Y > textBox.Height - 2;
+            Console.WriteLine(textBox.Width + " " + MouseDownLocation.X);
+
             textBox.BringToFront();
             textBox.Focus();
         }
 
         private void TextBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!mouseDown || e.Button != MouseButtons.Left)
+            if (!mouseDown || e.Button != MouseButtons.Left || !move)
                 return;
             TextBox textBox = sender as TextBox;
             textBox.Left = e.X + textBox.Left - MouseDownLocation.X;
@@ -74,12 +81,12 @@ namespace Bristol_Design.Designer_Items
 
         private void TextBox_LostFocus(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            projectTextbox.BorderStyle = BorderStyle.None;
         }
 
         private void TextBox_GotFocus(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            projectTextbox.BorderStyle = BorderStyle.FixedSingle;
         }
     }
 }

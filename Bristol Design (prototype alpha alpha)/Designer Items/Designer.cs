@@ -388,7 +388,8 @@ namespace Bristol_Design_prototype_alpha_alpha
             {
                 Parent = this,
                 Name = "textBox" + projectItemCount,
-                Location = new Point (500, 500)
+                Location = new Point (500, 500),
+                BorderStyle = BorderStyle.None
             };
 
             Textbox_Properties textbox_Properties = new Textbox_Properties(textBox, projectItemCount);
