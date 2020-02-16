@@ -17,7 +17,7 @@ namespace Bristol_Design.Designer_Forms
         double height;
         string units;
 
-        public Bristol_Setup()
+        public Bristol_Setup(string bbType, double length, double height, string units)
         {
             InitializeComponent();
         }

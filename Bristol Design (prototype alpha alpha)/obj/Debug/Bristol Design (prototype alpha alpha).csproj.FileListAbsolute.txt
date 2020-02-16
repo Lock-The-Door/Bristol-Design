@@ -1,0 +1,11 @@
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol Design (prototype alpha alpha).csprojAssemblyReference.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol_Design.Designer_Forms.Bristol_Setup.resources
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol Design (prototype alpha alpha).csproj.GenerateResource.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\bin\Debug\Bristol Design (prototype alpha alpha).exe.config
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\bin\Debug\Bristol Design (prototype alpha alpha).exe
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\bin\Debug\Bristol Design (prototype alpha alpha).pdb
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol Design (prototype alpha alpha).exe
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol Design (prototype alpha alpha).pdb
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol_Design_prototype_alpha_alpha.tsb_.resources
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol_Design_prototype_alpha_alpha.Properties.Resources.resources
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design (prototype alpha alpha)\obj\Debug\Bristol_Design_prototype_alpha_alpha.Start_Page.resources

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Bristol_Design__prototype_alpha_
+namespace Bristol_Design__prototype_alpha_alpha_
 {
     public partial class tsb_ : Form
     {
@@ -364,9 +364,16 @@ namespace Bristol_Design__prototype_alpha_
                 Controls.Remove(pictureboxProperty.projectPictureBox);
         }
 
+        // Bristol board type
+        string bbType;
+        // Size
+        double length;
+        double height;
+        string units;
+
         private void boardSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bristol_Setup setup = new Bristol_Setup();
+            Bristol_Setup setup = new Bristol_Setup(bbType, length, height, units);
             setup.ShowDialog();
         }
 

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bristol Design (prototype a
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bristol Design (prototype beta)", "Bristol Design (prototype beta)\Bristol Design (prototype beta).csproj", "{CB2C29F5-642B-4B43-9B8B-3F4353DEC403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bristol Design (prototype alpha alpha)", "Bristol Design (prototype alpha alpha)\Bristol Design (prototype alpha alpha).csproj", "{240B493F-6698-43B4-A50C-808E4FC1416C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CB2C29F5-642B-4B43-9B8B-3F4353DEC403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB2C29F5-642B-4B43-9B8B-3F4353DEC403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB2C29F5-642B-4B43-9B8B-3F4353DEC403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{240B493F-6698-43B4-A50C-808E4FC1416C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240B493F-6698-43B4-A50C-808E4FC1416C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240B493F-6698-43B4-A50C-808E4FC1416C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240B493F-6698-43B4-A50C-808E4FC1416C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿namespace Bristol_Design__prototype_alpha_
+﻿namespace Bristol_Design__prototype_alpha_alpha_
 {
     partial class tsb_
     {
@@ -177,7 +177,7 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
             | System.Windows.Forms.Keys.S)));
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
@@ -186,7 +186,7 @@
             // exportStripMenuItem2
             // 
             this.exportStripMenuItem2.Name = "exportStripMenuItem2";
-            this.exportStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.exportStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
             | System.Windows.Forms.Keys.E)));
             this.exportStripMenuItem2.Size = new System.Drawing.Size(195, 22);
             this.exportStripMenuItem2.Text = "Export...";
@@ -330,8 +330,8 @@
             // 
             // p_board
             // 
-            this.p_board.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.p_board.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.p_board.BackColor = System.Drawing.SystemColors.Control;
             this.p_board.Location = new System.Drawing.Point(196, 90);

@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bristol Design</title>
+    <title>Bristol Design</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <header class="fixed-top">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/Media/Logo1.png" height="25" /></a>
@@ -81,7 +81,7 @@
 
     </header>
     <div class="container">
-        <main role="main" class="pt-1 pb-1">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
