@@ -19,7 +19,6 @@ namespace Bristol_Design.Designer_Items
             textBox.MouseUp += TextBox_MouseUp;
             textBox.MouseMove += TextBox_MouseMove;
             textBox.MouseClick += TextBox_MouseClick;
-            mouseDown = true;
             textBox.Enabled = true;
             textBox.Focus();
             textBox.Name = "bo_textBox-" + projectItemID;
@@ -55,6 +54,7 @@ namespace Bristol_Design.Designer_Items
         private bool mouseDown = false;
         private bool resizeX = false;
         private bool resizeY = false;
+        private bool reverseResize = false;
         //private bool resize = false; // This is a corner resize with no fixed axis
         private Point MouseDownLocation;
         private Size startSize;
@@ -86,6 +86,7 @@ namespace Bristol_Design.Designer_Items
 
             resizeY = e.Location.X > textBox.Size.Width / 2 - 2 && e.Location.X < textBox.Size.Width / 2 + 2 && move;
             resizeX = e.Location.Y > textBox.Size.Height / 2 - 2 && e.Location.Y < textBox.Size.Height / 2 + 2 && move;
+            reverseResize = (resizeX && e.Location.X < 4) || (resizeY && e.Location.Y < 4);
 
             startSize = textBox.Size;
 
@@ -102,20 +103,25 @@ namespace Bristol_Design.Designer_Items
             bool cursorResizeX = e.Location.Y > textBox.Size.Height/2 - 2 && e.Location.Y < textBox.Size.Height/2 + 2 && cursorMove;
             move = MouseDownLocation.X < 4 || MouseDownLocation.Y < 4 || MouseDownLocation.X > textBox.Size.Width - 4 || MouseDownLocation.Y > textBox.Height - 4;
 
-            if (cursorResizeX)
+            if (cursorResizeX && !mouseDown)
                 textBox.Cursor = Cursors.SizeWE;
-            else if (cursorResizeY)
+            else if (cursorResizeY && !mouseDown)
                 textBox.Cursor = Cursors.SizeNS;
-            else if (cursorMove)
+            else if (cursorMove && !mouseDown)
                 textBox.Cursor = Cursors.SizeAll;
-            else
+            else if (!mouseDown)
                 textBox.Cursor = Cursors.IBeam;
 
             bool click = mouseDown && e.Button == MouseButtons.Left;
 
             if (click && resizeY)
             {
-                textBox.Height = e.Y - MouseDownLocation.Y + startSize.Height;
+                if (reverseResize)
+                {
+                    textBox.Height = MouseDownLocation.Y - (e.Y + startSize.Height) + startSize.Height;
+                }
+                else
+                    textBox.Height = e.Y - MouseDownLocation.Y + startSize.Height;
                 textBox.DeselectAll();
             }
             else if (click && resizeX)
