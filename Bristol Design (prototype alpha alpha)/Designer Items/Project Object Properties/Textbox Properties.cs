@@ -79,19 +79,25 @@ namespace Bristol_Design.Designer_Items
         {
             TextBox textBox = sender as TextBox;
 
-            bool cursorMove = e.Location.X < 2 || e.Location.Y < 2 || e.Location.X > textBox.Size.Width - 2 || e.Location.Y > textBox.Height - 2;
-            move = MouseDownLocation.X < 2 || MouseDownLocation.Y < 2 || MouseDownLocation.X > textBox.Size.Width - 2 || MouseDownLocation.Y > textBox.Height - 2;
+            bool cursorMove = e.Location.X < 4 || e.Location.Y < 4 || e.Location.X > textBox.Size.Width - 4 || e.Location.Y > textBox.Height - 4;
+            bool cursorResizeY = e.Location.X > textBox.Size.Width/2 - 2 && e.Location.X < textBox.Size.Width/2 + 2 && cursorMove;
+            bool cursorResizeX = e.Location.Y > textBox.Size.Height/2 - 2 && e.Location.Y < textBox.Size.Height/2 + 2 && cursorMove;
+            move = MouseDownLocation.X < 4 || MouseDownLocation.Y < 4 || MouseDownLocation.X > textBox.Size.Width - 4 || MouseDownLocation.Y > textBox.Height - 4;
 
-            if (cursorMove)
+            if (cursorResizeX)
+                textBox.Cursor = Cursors.SizeWE;
+            else if (cursorResizeY)
+                textBox.Cursor = Cursors.SizeNS;
+            else if (cursorMove)
                 textBox.Cursor = Cursors.SizeAll;
             else
                 textBox.Cursor = Cursors.IBeam;
 
-            if (!mouseDown || e.Button != MouseButtons.Left || !move)
-                return;
-
-            textBox.Left = e.X + textBox.Left - MouseDownLocation.X;
-            textBox.Top = e.Y + textBox.Top - MouseDownLocation.Y;
+            if (mouseDown && e.Button == MouseButtons.Left && move)
+            {
+                textBox.Left = e.X + textBox.Left - MouseDownLocation.X;
+                textBox.Top = e.Y + textBox.Top - MouseDownLocation.Y;
+            }
         }
 
         private void TextBox_MouseClick(object sender, MouseEventArgs e)
