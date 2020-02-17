@@ -116,13 +116,17 @@ namespace Bristol_Design.Designer_Items
             bool click = mouseDown && e.Button == MouseButtons.Left;
 
             if (click && resizeY)
+            {
                 textBox.Height = e.Y - MouseDownLocation.Y + startSize.Height;
+                textBox.DeselectAll();
+            }
             else if (click && resizeX)
                 textBox.Width = e.X - MouseDownLocation.X + startSize.Width;
             else if (click && move)
             {
                 textBox.Left = e.X + textBox.Left - MouseDownLocation.X;
                 textBox.Top = e.Y + textBox.Top - MouseDownLocation.Y;
+                textBox.DeselectAll();
             }
         }
 
