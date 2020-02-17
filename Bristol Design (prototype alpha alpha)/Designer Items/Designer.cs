@@ -361,15 +361,15 @@ namespace Bristol_Design_prototype_alpha_alpha
                         }
 
                         // Create the textbox and add the properties
-                        Textbox_Properties textbox_Properties = new Textbox_Properties(new TextBox(), projectItemCount);
-                        TextBox textbox = textbox_Properties.projectTextbox;
-                        textbox.Parent = this;
-                        textbox.Location = position;
-                        textbox.Font = new Font(fontFamilyName, fontSize, fontStyle);
-                        Console.WriteLine(fontSize + " " + textbox.Font);
-                        textbox.Size = new Size(new Point(width, height));
-                        Console.WriteLine(textbox.Size);
-                        textbox.Text = textboxText;
+                        TextBox textbox = new TextBox
+                        {
+                            Parent = this,
+                            Location = position,
+                            Font = new Font(fontFamilyName, fontSize, fontStyle),
+                            Size = new Size(new Point(width, height)),
+                            Text = textboxText
+                        };
+                        Textbox_Properties textbox_Properties = new Textbox_Properties(textbox, projectItemCount);
                         projectTextboxes.Add(textbox_Properties);
                         textbox.BringToFront();
                         Update();
@@ -409,6 +409,7 @@ namespace Bristol_Design_prototype_alpha_alpha
             {
                 Parent = this,
                 Name = "textBox" + projectItemCount,
+                Text = "Click to add text",
                 Location = new Point(500, 500),
                 BorderStyle = BorderStyle.FixedSingle,
                 Multiline = true
