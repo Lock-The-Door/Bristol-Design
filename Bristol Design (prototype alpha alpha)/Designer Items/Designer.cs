@@ -409,8 +409,9 @@ namespace Bristol_Design_prototype_alpha_alpha
             {
                 Parent = this,
                 Name = "textBox" + projectItemCount,
-                Location = new Point (500, 500),
-                BorderStyle = BorderStyle.None
+                Location = new Point(500, 500),
+                BorderStyle = BorderStyle.FixedSingle,
+                Multiline = true
             };
 
             textBox.MouseDown += Control_MouseDown;

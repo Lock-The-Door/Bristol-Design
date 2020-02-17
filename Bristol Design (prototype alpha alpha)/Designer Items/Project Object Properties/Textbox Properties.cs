@@ -22,7 +22,6 @@ namespace Bristol_Design.Designer_Items
             textBox.MouseMove += TextBox_MouseMove;
             textBox.MouseClick += TextBox_MouseClick;
             mouseDown = true;
-            textBox.Enabled = false;
             textBox.Enabled = true;
             textBox.Focus();
             textBox.Name = "bo_textBox-" + projectItemID;
@@ -43,12 +42,12 @@ namespace Bristol_Design.Designer_Items
             {
                 projectTextbox.Parent.Controls.Remove(projectTextbox);
             }
-            else if (e.KeyChar == (char)13)
+            /*else if (e.KeyChar == (char)13)
             {
                 projectTextbox.BorderStyle = BorderStyle.None;
                 projectTextbox.Enabled = false;
                 projectTextbox.Enabled = true;
-            }
+            }*/
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)
