@@ -12,7 +12,6 @@ namespace Bristol_Design.Designer_Items
     {
         int projectItemID;
         public TextBox projectTextbox;
-        private Panel selectedPanel;
         public Textbox_Properties(TextBox textBox, int textBoxId)
         {
             projectTextbox = textBox;
