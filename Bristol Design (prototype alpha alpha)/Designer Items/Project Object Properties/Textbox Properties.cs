@@ -24,7 +24,7 @@ namespace Bristol_Design.Designer_Items
             mouseDown = true;
             textBox.Enabled = true;
             textBox.Focus();
-            textBox.Name = "bl_textBox" + projectItemID;
+            textBox.Name = "bo_textBox-" + projectItemID;
             textBox.TextChanged += TextBox_TextChanged;
             projectItemID = textBoxId;
 
@@ -46,7 +46,7 @@ namespace Bristol_Design.Designer_Items
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            textBox.Name = textBox.Text + projectItemID;
+            textBox.Name = "bo_textBox-" + textBox.Text + projectItemID;
         }
 
         private bool mouseDown = false;

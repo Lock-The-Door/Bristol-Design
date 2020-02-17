@@ -24,7 +24,7 @@ namespace Bristol_Design.Designer_Items
             pictureBox.Enabled = true;
             pictureBox.BringToFront();
             pictureBox.Focus();
-            pictureBox.Name = "bl_pictureBox" + pictureBoxId;
+            pictureBox.Name = "bo_pictureBox-" + pictureBoxId;
             projectItemID = pictureBoxId;
         }
 

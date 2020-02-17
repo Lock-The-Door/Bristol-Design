@@ -33,7 +33,28 @@ namespace Bristol_Design_prototype_alpha_alpha
             // Recenter on re-size
             Resize += Designer_Resize;
 
-            // Add border control
+            // On click request deselect for all other objects
+            MouseDown += Control_MouseDown;
+            foreach (Control control in Controls)
+            {
+                control.MouseDown += Control_MouseDown;
+            }
+        }
+
+        private void Control_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control.Name.StartsWith("bo_textBox-") && control != sender)
+                {
+                    TextBox textObject = control as TextBox;
+                    textObject.BorderStyle = BorderStyle.None;
+                    textObject.Enabled = false;
+                    textObject.Enabled = true;
+                }
+                else if (control.Name.StartsWith("bo_pictureBox-"))
+                    (control as PictureBox).BorderStyle = BorderStyle.None;
+            }
         }
 
         private void tsb__Load(object sender, EventArgs e)
@@ -392,6 +413,8 @@ namespace Bristol_Design_prototype_alpha_alpha
                 BorderStyle = BorderStyle.None
             };
 
+            textBox.MouseDown += Control_MouseDown;
+
             Textbox_Properties textbox_Properties = new Textbox_Properties(textBox, projectItemCount);
 
             projectTextboxes.Add(textbox_Properties);
@@ -408,6 +431,8 @@ namespace Bristol_Design_prototype_alpha_alpha
                 Parent = this,
                 Name = "pictureBox" + projectItemCount
             };
+
+            pictureBox.MouseDown += Control_MouseDown;
 
             PictureBox_Properties pictureBox_Properties = new PictureBox_Properties(pictureBox, projectItemCount);
 
