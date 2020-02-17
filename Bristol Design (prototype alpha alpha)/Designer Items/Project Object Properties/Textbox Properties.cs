@@ -29,7 +29,6 @@ namespace Bristol_Design.Designer_Items
             textBox.KeyPress += TextBox_KeyPress;
 
             textBox.BringToFront();
-            Console.WriteLine(selectedPanel);
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
