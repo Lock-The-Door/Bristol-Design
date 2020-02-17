@@ -333,7 +333,7 @@
             this.p_board.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.p_board.BackColor = System.Drawing.SystemColors.Control;
+            this.p_board.BackColor = System.Drawing.Color.White;
             this.p_board.Location = new System.Drawing.Point(196, 90);
             this.p_board.Name = "p_board";
             this.p_board.Size = new System.Drawing.Size(900, 469);
