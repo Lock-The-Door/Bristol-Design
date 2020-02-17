@@ -20,6 +20,7 @@ namespace Bristol_Design.Designer_Items
             textBox.MouseDown += TextBox_MouseDown;
             textBox.MouseUp += TextBox_MouseUp;
             textBox.MouseMove += TextBox_MouseMove;
+            textBox.MouseClick += TextBox_MouseClick;
             mouseDown = true;
             textBox.Enabled = true;
             textBox.Focus();
@@ -32,6 +33,7 @@ namespace Bristol_Design.Designer_Items
             textBox.BringToFront();
             Console.WriteLine(selectedPanel);
         }
+
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -49,7 +51,6 @@ namespace Bristol_Design.Designer_Items
 
         private bool mouseDown = false;
         private Point MouseDownLocation;
-        private bool move = false;
 
         private void TextBox_MouseUp(object sender, MouseEventArgs e)
         {
@@ -63,28 +64,30 @@ namespace Bristol_Design.Designer_Items
 
             TextBox textBox = sender as TextBox;
 
-            move = MouseDownLocation.X < 2 || MouseDownLocation.Y < 2 || MouseDownLocation.X > textBox.Size.Width - 2 || MouseDownLocation.Y > textBox.Height - 2;
-            Console.WriteLine(textBox.Width + " " + MouseDownLocation.X);
-
             textBox.BringToFront();
             textBox.Focus();
         }
 
         private void TextBox_MouseMove(object sender, MouseEventArgs e)
         {
+            TextBox textBox = sender as TextBox;
+
+            bool cursorMove = e.Location.X < 2 || e.Location.Y < 2 || e.Location.X > textBox.Size.Width - 2 || e.Location.Y > textBox.Height - 2;
+            bool move = MouseDownLocation.X < 2 || MouseDownLocation.Y < 2 || MouseDownLocation.X > textBox.Size.Width - 2 || MouseDownLocation.Y > textBox.Height - 2;
+
+            if (cursorMove)
+                textBox.Cursor = Cursors.SizeAll;
+            else
+                textBox.Cursor = Cursors.IBeam;
+
             if (!mouseDown || e.Button != MouseButtons.Left || !move)
                 return;
-            TextBox textBox = sender as TextBox;
+
             textBox.Left = e.X + textBox.Left - MouseDownLocation.X;
             textBox.Top = e.Y + textBox.Top - MouseDownLocation.Y;
         }
 
-        private void TextBox_LostFocus(object sender, EventArgs e)
-        {
-            projectTextbox.BorderStyle = BorderStyle.None;
-        }
-
-        private void TextBox_GotFocus(object sender, EventArgs e)
+        private void TextBox_MouseClick(object sender, MouseEventArgs e)
         {
             projectTextbox.BorderStyle = BorderStyle.FixedSingle;
         }
