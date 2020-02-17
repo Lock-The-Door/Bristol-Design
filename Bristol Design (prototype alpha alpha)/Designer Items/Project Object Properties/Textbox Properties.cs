@@ -33,8 +33,6 @@ namespace Bristol_Design.Designer_Items
             Console.WriteLine(selectedPanel);
         }
 
-        bool move;
-
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)8 && move)
@@ -55,8 +53,13 @@ namespace Bristol_Design.Designer_Items
             textBox.Name = "bo_textBox-" + textBox.Text + projectItemID;
         }
 
+        bool move;
         private bool mouseDown = false;
+        private bool resizeX = false;
+        private bool resizeY = false;
+        //private bool resize = false; // This is a corner resize with no fixed axis
         private Point MouseDownLocation;
+        private Size startSize;
 
         private void TextBox_MouseUp(object sender, MouseEventArgs e)
         {
@@ -69,6 +72,11 @@ namespace Bristol_Design.Designer_Items
             MouseDownLocation = e.Location;
 
             TextBox textBox = sender as TextBox;
+
+            resizeY = e.Location.X > textBox.Size.Width / 2 - 2 && e.Location.X < textBox.Size.Width / 2 + 2 && move;
+            resizeX = e.Location.Y > textBox.Size.Height / 2 - 2 && e.Location.Y < textBox.Size.Height / 2 + 2 && move;
+
+            startSize = textBox.Size;
 
             textBox.BringToFront();
             textBox.Focus();
@@ -92,7 +100,13 @@ namespace Bristol_Design.Designer_Items
             else
                 textBox.Cursor = Cursors.IBeam;
 
-            if (mouseDown && e.Button == MouseButtons.Left && move)
+            bool click = mouseDown && e.Button == MouseButtons.Left;
+
+            if (click && resizeY)
+                textBox.Height = e.Y - MouseDownLocation.Y + startSize.Height;
+            else if (click && resizeX)
+                textBox.Width = e.X - MouseDownLocation.X + startSize.Width;
+            else if (click && move)
             {
                 textBox.Left = e.X + textBox.Left - MouseDownLocation.X;
                 textBox.Top = e.Y + textBox.Top - MouseDownLocation.Y;
