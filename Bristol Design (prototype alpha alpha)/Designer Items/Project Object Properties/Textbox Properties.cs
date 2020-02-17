@@ -22,6 +22,7 @@ namespace Bristol_Design.Designer_Items
             textBox.MouseMove += TextBox_MouseMove;
             textBox.MouseClick += TextBox_MouseClick;
             mouseDown = true;
+            textBox.Enabled = false;
             textBox.Enabled = true;
             textBox.Focus();
             textBox.Name = "bo_textBox-" + projectItemID;
@@ -34,12 +35,19 @@ namespace Bristol_Design.Designer_Items
             Console.WriteLine(selectedPanel);
         }
 
+        bool move;
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)8)
+            if (e.KeyChar == (char)8 && move)
             {
                 projectTextbox.Parent.Controls.Remove(projectTextbox);
+            }
+            else if (e.KeyChar == (char)13)
+            {
+                projectTextbox.BorderStyle = BorderStyle.None;
+                projectTextbox.Enabled = false;
+                projectTextbox.Enabled = true;
             }
         }
 
@@ -73,7 +81,7 @@ namespace Bristol_Design.Designer_Items
             TextBox textBox = sender as TextBox;
 
             bool cursorMove = e.Location.X < 2 || e.Location.Y < 2 || e.Location.X > textBox.Size.Width - 2 || e.Location.Y > textBox.Height - 2;
-            bool move = MouseDownLocation.X < 2 || MouseDownLocation.Y < 2 || MouseDownLocation.X > textBox.Size.Width - 2 || MouseDownLocation.Y > textBox.Height - 2;
+            move = MouseDownLocation.X < 2 || MouseDownLocation.Y < 2 || MouseDownLocation.X > textBox.Size.Width - 2 || MouseDownLocation.Y > textBox.Height - 2;
 
             if (cursorMove)
                 textBox.Cursor = Cursors.SizeAll;
