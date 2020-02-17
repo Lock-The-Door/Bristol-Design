@@ -64,6 +64,19 @@ namespace Bristol_Design.Designer_Items
         private void TextBox_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+
+            // Prevent extremely small resizing
+            TextBox textBox = sender as TextBox;
+            int newX = textBox.Size.Width;
+            int newY = textBox.Size.Height;
+            Console.WriteLine(newX + ", " + newY);
+            if (newX < 10 && newX >= 0)
+                newX = 10;
+            if (newY < 10 && newY >= 0)
+                newY = 10;
+
+            // Set the new size
+            textBox.Size = new Size(newX, newY);
         }
 
         private void TextBox_MouseDown(object sender, MouseEventArgs e)
