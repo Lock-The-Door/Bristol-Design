@@ -33,7 +33,28 @@ namespace Bristol_Design_prototype_alpha_alpha
             // Recenter on re-size
             Resize += Designer_Resize;
 
-            // Add border control
+            // On click request deselect for all other objects
+            MouseDown += Control_MouseDown;
+            foreach (Control control in Controls)
+            {
+                control.MouseDown += Control_MouseDown;
+            }
+        }
+
+        private void Control_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control.Name.StartsWith("bo_textBox-") && control != sender)
+                {
+                    TextBox textObject = control as TextBox;
+                    textObject.BorderStyle = BorderStyle.None;
+                    textObject.Enabled = false;
+                    textObject.Enabled = true;
+                }
+                else if (control.Name.StartsWith("bo_pictureBox-"))
+                    (control as PictureBox).BorderStyle = BorderStyle.None;
+            }
         }
 
         private void tsb__Load(object sender, EventArgs e)
@@ -340,15 +361,15 @@ namespace Bristol_Design_prototype_alpha_alpha
                         }
 
                         // Create the textbox and add the properties
-                        Textbox_Properties textbox_Properties = new Textbox_Properties(new TextBox(), projectItemCount);
-                        TextBox textbox = textbox_Properties.projectTextbox;
-                        textbox.Parent = this;
-                        textbox.Location = position;
-                        textbox.Font = new Font(fontFamilyName, fontSize, fontStyle);
-                        Console.WriteLine(fontSize + " " + textbox.Font);
-                        textbox.Size = new Size(new Point(width, height));
-                        Console.WriteLine(textbox.Size);
-                        textbox.Text = textboxText;
+                        TextBox textbox = new TextBox
+                        {
+                            Parent = this,
+                            Location = position,
+                            Font = new Font(fontFamilyName, fontSize, fontStyle),
+                            Size = new Size(new Point(width, height)),
+                            Text = textboxText
+                        };
+                        Textbox_Properties textbox_Properties = new Textbox_Properties(textbox, projectItemCount);
                         projectTextboxes.Add(textbox_Properties);
                         textbox.BringToFront();
                         Update();
@@ -388,8 +409,13 @@ namespace Bristol_Design_prototype_alpha_alpha
             {
                 Parent = this,
                 Name = "textBox" + projectItemCount,
-                Location = new Point (500, 500)
+                Text = "Click to add text",
+                Location = new Point(500, 500),
+                Multiline = true,
+                BorderStyle = BorderStyle.FixedSingle
             };
+
+            textBox.MouseDown += Control_MouseDown;
 
             Textbox_Properties textbox_Properties = new Textbox_Properties(textBox, projectItemCount);
 
@@ -407,6 +433,8 @@ namespace Bristol_Design_prototype_alpha_alpha
                 Parent = this,
                 Name = "pictureBox" + projectItemCount
             };
+
+            pictureBox.MouseDown += Control_MouseDown;
 
             PictureBox_Properties pictureBox_Properties = new PictureBox_Properties(pictureBox, projectItemCount);
 

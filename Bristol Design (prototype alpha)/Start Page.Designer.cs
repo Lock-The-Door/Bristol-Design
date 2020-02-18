@@ -33,7 +33,7 @@
             // 
             // b_placeholderLaunch
             // 
-            this.b_placeholderLaunch.Location = new System.Drawing.Point(149, 91);
+            this.b_placeholderLaunch.Location = new System.Drawing.Point(86, 54);
             this.b_placeholderLaunch.Name = "b_placeholderLaunch";
             this.b_placeholderLaunch.Size = new System.Drawing.Size(501, 221);
             this.b_placeholderLaunch.TabIndex = 1;
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 607);
+            this.ClientSize = new System.Drawing.Size(707, 332);
             this.Controls.Add(this.b_placeholderLaunch);
             this.Name = "Start_Page";
             this.Text = "Start_Page";
