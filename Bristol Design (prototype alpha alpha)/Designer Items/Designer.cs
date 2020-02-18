@@ -232,11 +232,13 @@ namespace Bristol_Design_prototype_alpha_alpha
             path = savePath;
             fileName = Path.GetFileNameWithoutExtension(path);
             updateName();
+
+            changed = false; //changes saved
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!changed)
+            if (changed)
             {
                 var save = MessageBox.Show("You have unsaved changes. Do you want to save them?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (save == DialogResult.Cancel)
@@ -249,6 +251,8 @@ namespace Bristol_Design_prototype_alpha_alpha
             if (openResult == DialogResult.Cancel)
                 return;
             string openPath = Path.GetFullPath(openFileDialog.FileName);
+
+            newToolStripMenuItem_Click(sender, e);// Clear the board
 
             // Open and read file
             List<string> bbpProjectLines = new List<string>();
@@ -394,8 +398,6 @@ namespace Bristol_Design_prototype_alpha_alpha
             // Update the name
             fileName = Path.GetFileNameWithoutExtension(openPath);
             updateName();
-
-            changed = false;// All changes saved
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -428,7 +430,7 @@ namespace Bristol_Design_prototype_alpha_alpha
             };
 
             textBox.MouseDown += Control_MouseDown;
-            textBox.MouseDown += delegate { changed = true; };
+            textBox.MouseDown += ProjectObject_MouseDown;
 
             Textbox_Properties textbox_Properties = new Textbox_Properties(textBox, projectItemCount);
 
@@ -448,7 +450,7 @@ namespace Bristol_Design_prototype_alpha_alpha
             };
 
             pictureBox.MouseDown += Control_MouseDown;
-            pictureBox.MouseDown += delegate { changed = true; };
+            pictureBox.MouseDown += ProjectObject_MouseDown;
 
             PictureBox_Properties pictureBox_Properties = new PictureBox_Properties(pictureBox, projectItemCount);
 
@@ -459,10 +461,13 @@ namespace Bristol_Design_prototype_alpha_alpha
             projectItemCount++;
         }
 
+        private void ProjectObject_MouseDown(object sender, MouseEventArgs e)
+           => changed = true;
+
         public Form StartPageRef { get; set; }
         private void startPageStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!changed)
+            if (changed)
             {
                 var save = MessageBox.Show("You have unsaved changes. Do you want to save them?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (save == DialogResult.Cancel)
@@ -479,7 +484,7 @@ namespace Bristol_Design_prototype_alpha_alpha
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!changed)
+            if (changed)
             {
                 var save = MessageBox.Show("You have unsaved changes. Do you want to save them?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (save == DialogResult.Cancel)

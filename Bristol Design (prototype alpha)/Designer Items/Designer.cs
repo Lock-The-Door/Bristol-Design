@@ -363,6 +363,8 @@ namespace Bristol_Design__prototype_alpha_alpha_
             // Update the name
             fileName = Path.GetFileNameWithoutExtension(openPath);
             updateName();
+
+            changed = false;// All changes saved
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
