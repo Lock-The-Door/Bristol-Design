@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bristol_Design__prototype_alpha_;
+using Bristol_Design__prototype_alpha_alpha_;
 
 namespace Bristol_Design__prototype_alpha_
 {
@@ -23,7 +23,7 @@ namespace Bristol_Design__prototype_alpha_
         private void b_placeholderLaunch_Click(object sender, EventArgs e)
         {
             // Create and name the form
-            Designer designerForm = new tsb_();
+            tsb_ designerForm = new tsb_();
             designerForm.fileName = "Untitled Bristol Board";
 
             // Open the new form
