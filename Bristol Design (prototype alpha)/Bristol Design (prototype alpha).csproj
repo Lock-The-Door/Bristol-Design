@@ -78,7 +78,6 @@
     </Compile>
     <Compile Include="Designer Items\Project Object Properties\Picturebox Properties.cs" />
     <Compile Include="Designer Items\Project Object Properties\Textbox Properties.cs" />
-    <Compile Include="Form Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Start Page.cs">
