@@ -381,7 +381,8 @@ namespace Bristol_Design_prototype_alpha_alpha
                             Location = position,
                             Font = new Font(fontFamilyName, fontSize, fontStyle),
                             Size = new Size(new Point(width, height)),
-                            Text = textboxText
+                            Text = textboxText,
+                            Multiline = true;
                         };
                         Textbox_Properties textbox_Properties = new Textbox_Properties(textbox, projectItemCount);
                         projectTextboxes.Add(textbox_Properties);
