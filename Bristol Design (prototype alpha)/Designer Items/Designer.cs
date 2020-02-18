@@ -16,6 +16,8 @@ namespace Bristol_Design__prototype_alpha_alpha_
 
         public string fileName;
 
+        bool changed = false;
+
         public tsb_()
         {
             InitializeComponent();
@@ -203,6 +205,14 @@ namespace Bristol_Design__prototype_alpha_alpha_
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!changed)
+            {
+                var save = MessageBox.Show("You have unsaved changes. Do you want to save them?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (save == DialogResult.Cancel)
+                    return;
+                if (save == DialogResult.Yes)
+                    tsb_Save_Click(sender, e);
+            }
             // Get file location
             DialogResult openResult = openFileDialog.ShowDialog();
             if (openResult == DialogResult.Cancel)
@@ -416,6 +426,14 @@ namespace Bristol_Design__prototype_alpha_alpha_
         public Form StartPageRef { get; set; }
         private void startPageStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!changed)
+            {
+                var save = MessageBox.Show("You have unsaved changes. Do you want to save them?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (save == DialogResult.Cancel)
+                    return;
+                if (save == DialogResult.Yes)
+                    tsb_Save_Click(sender, e);
+            }
             StartPageRef.Show();
             StartPageRef.Update();
             StartPageRef.Focus();
@@ -425,6 +443,14 @@ namespace Bristol_Design__prototype_alpha_alpha_
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!changed)
+            {
+                var save = MessageBox.Show("You have unsaved changes. Do you want to save them?", "Save?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (save == DialogResult.Cancel)
+                    return;
+                if (save == DialogResult.Yes)
+                    tsb_Save_Click(sender, e);
+            }
             Application.Exit();
         }
 
