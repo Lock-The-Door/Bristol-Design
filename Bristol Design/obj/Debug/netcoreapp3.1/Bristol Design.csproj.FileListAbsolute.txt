@@ -108,3 +108,4 @@ C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreap
 C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.csproj.CopyComplete
 C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.dll
 C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.pdb
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\libman.json
