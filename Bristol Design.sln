@@ -1,11 +1,11 @@
-﻿
+﻿6
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bristol Design (prototype alpha)", "Bristol Design (prototype alpha)\Bristol Design (prototype alpha).csproj", "{B70CB608-B714-4CE5-BC36-48C691B9C8B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bristol Design (prototype beta)", "Bristol Design (prototype beta)\Bristol Design (prototype beta).csproj", "{CB2C29F5-642B-4B43-9B8B-3F4353DEC403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bristol Design", "Bristol Design\Bristol Design.csproj", "{CB2C29F5-642B-4B43-9B8B-3F4353DEC403}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bristol Design (prototype alpha alpha)", "Bristol Design (prototype alpha alpha)\Bristol Design (prototype alpha alpha).csproj", "{240B493F-6698-43B4-A50C-808E4FC1416C}"
 EndProject

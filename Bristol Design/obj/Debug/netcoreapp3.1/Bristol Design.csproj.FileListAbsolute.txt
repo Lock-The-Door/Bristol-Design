@@ -1,0 +1,110 @@
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.exe
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.deps.json
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.runtimeconfig.json
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.runtimeconfig.dev.json
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.pdb
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.Views.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Bristol Design.Views.pdb
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.BrowserLink.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.csprojAssemblyReference.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\staticwebassets\Bristol Design.StaticWebAssets.Manifest.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\staticwebassets\Bristol Design.StaticWebAssets.xml
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.RazorAssemblyInfo.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.RazorAssemblyInfo.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.AssemblyInfoInputs.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.AssemblyInfo.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.TagHelpers.input.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.TagHelpers.output.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.RazorCoreGenerate.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\App\Index.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\App\_Layout.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.RazorTargetAssemblyInfo.cache
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.RazorTargetAssemblyInfo.cs
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.Views.pdb
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.csproj.CopyComplete
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.dll
+C:\Users\Jonathan\source\repos\Bristol Design\Bristol Design\obj\Debug\netcoreapp3.1\Bristol Design.pdb
